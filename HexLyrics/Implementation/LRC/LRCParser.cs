@@ -172,7 +172,7 @@ namespace HexLyrics.Implementation.LRC
                             mIndex++;
                         //mutiple timestamp in one line like this: [xx:xx.xxx][yy.yy.yyy] ohhhhh
                         var timestamps = new List<TimeSpan>() { time };
-                        while (NowCharChecked == '[')
+                        while (mIndex < mValue.Length && mValue[mIndex] == '[')
                         {
                             mIndex++;
                             var newTime = ParseTimestamp();
